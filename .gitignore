@@ -33,10 +33,10 @@ overs JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, And
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
-
+.idea/
 # JIRA plugin
 atlassian-ide-plugin.xml
-
+*.iml
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
 crashlytics.properties
