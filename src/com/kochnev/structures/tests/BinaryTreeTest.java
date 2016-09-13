@@ -3,6 +3,7 @@ package com.kochnev.structures.tests;
 import com.kochnev.structures.trees.BinaryTree;
 import com.kochnev.structures.trees.nodes.Node;
 import org.junit.Test;
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 import static junit.framework.TestCase.assertNull;
 import static org.junit.Assert.assertEquals;

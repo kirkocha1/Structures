@@ -142,7 +142,7 @@ public abstract class AbsTree<T extends Comparable<T>> {
             if (successor.getRight() != null) {
                 while (successor != null && node.getKey() == successor.getRight().getKey()) {
                     Node<T> tmp = successor;
-                    node = tmp;
+                    node = successor;
                     successor = successor.getParent();
                     if (successor.getRight() == null) {
                         break;
@@ -181,8 +181,7 @@ public abstract class AbsTree<T extends Comparable<T>> {
                 return predessor.getKey();
             }
             while (predessor != null && node.getKey() == predessor.getLeft().getKey()) {
-                Node<T> tmp = predessor;
-                node = tmp;
+                node = predessor;
                 predessor = predessor.getParent();
                 if (predessor.getLeft() == null) {
                     break;
@@ -199,12 +198,31 @@ public abstract class AbsTree<T extends Comparable<T>> {
         return root;
     }
 
+    /**
+     *
+     * @param value to insert if the value is not unique it will bee added on the right side of the fisrt repeated element
+     */
     public abstract void insert(T value);
 
+    /**
+     * delete the first matched object
+     * @param value
+     */
     public abstract void delete(T value);
 
+    /**
+     *
+     * @param node root object from search will be started down to leafs
+     * @param value which try to find
+     * @return the first matched object
+     */
     public abstract Node<T> search(Node<T> node, T value);
 
+    /**
+     *
+     * @param value which try to find
+     * @return the first matched object
+     */
     public abstract Node<T> search(T value);
 
 }
