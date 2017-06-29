@@ -14,9 +14,9 @@ public class BinaryTree<T extends Comparable<T>> extends AbsTree<T> {
             if (oldNode.getParent() == null) {
                 root = newNode;
             } else if (oldNode.equals(oldNode.getParent().getLeft())) {
-                    oldNode.getParent().setLeft(newNode);
+                oldNode.getParent().setLeft(newNode);
             } else if (oldNode.equals(oldNode.getParent().getRight())) {
-                    oldNode.getParent().setRight(newNode);
+                oldNode.getParent().setRight(newNode);
             }
             newNode.setParent(oldNode.getParent());
         }
@@ -68,7 +68,7 @@ public class BinaryTree<T extends Comparable<T>> extends AbsTree<T> {
         } else {
             Node<T> oldNode = search(root, minValue(node.getRight().getKey()));
             if (oldNode.getParent().getKey() != node.getKey()) {
-                if (oldNode.getRight() != null){
+                if (oldNode.getRight() != null) {
                     Transplant(oldNode, oldNode.getRight());
                 } else {
                     oldNode.getParent().setLeft(null);
@@ -90,7 +90,7 @@ public class BinaryTree<T extends Comparable<T>> extends AbsTree<T> {
             return root;
         }
         Node<T> resultElement = root;
-        while (resultElement != null && value != resultElement.getKey()) {
+        while (resultElement != null && resultElement.getKey() != null && value != resultElement.getKey()) {
             if (value.compareTo(resultElement.getKey()) < 0) {
                 resultElement = resultElement.getLeft();
             } else {
